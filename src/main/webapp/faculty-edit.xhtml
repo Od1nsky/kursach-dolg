@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">Редактирование факультета - Система учебных планов</ui:define>
+    
+    <ui:define name="pageTitle">#{facultyController.editId != null ? 'Редактирование факультета' : 'Создание нового факультета'}</ui:define>
+    
+    <ui:define name="content">
+        <h:form id="editForm" styleClass="edit-form">
+            <p:panel>
+                <div class="p-field">
+                    <p:outputLabel for="nameFaculty" value="Полное название факультета:" />
+                    <p:inputText id="nameFaculty" value="#{facultyController.faculty.nameFaculty}" 
+                                required="true" requiredMessage="Введите полное название факультета"
+                                style="width: 100%" />
+                    <p:message for="nameFaculty" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="shortNameFaculty" value="Короткое название факультета:" />
+                    <p:inputText id="shortNameFaculty" value="#{facultyController.faculty.shortNameFaculty}" 
+                                required="true" requiredMessage="Введите короткое название факультета"
+                                style="width: 100%" />
+                    <p:message for="shortNameFaculty" />
+                </div>
+                
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить" action="#{facultyController.save}" 
+                                    icon="pi pi-check" styleClass="ui-button-success" />
+                    <p:button value="Отмена" outcome="faculty" icon="pi pi-times" styleClass="ui-button-secondary" />
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html> 

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<f:metadata>
+    <f:viewAction action="#{disciplineController.loadDiscipline}" />
+    <f:viewAction action="#{chairController.init}" />
+    <f:viewAction action="#{curriculumController.init}" />
+</f:metadata>
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Редактирование дисциплины - Система учебных планов</title>
+</h:head>
+
+<h:body>
+    <div id="header">
+        <h:form>
+            <p:menubar>
+                <p:menuitem value="Главная" icon="pi pi-home" outcome="index"/>
+                
+                <p:submenu label="Учебные планы" icon="pi pi-book">
+                    <p:menuitem value="Список учебных планов" outcome="curriculum"/>
+                    <p:menuitem value="Добавить учебный план" outcome="curriculum-edit"/>
+                </p:submenu>
+                
+                <p:submenu label="Дисциплины" icon="pi pi-list">
+                    <p:menuitem value="Список дисциплин" outcome="discipline"/>
+                    <p:menuitem value="Добавить дисциплину" outcome="discipline-edit"/>
+                </p:submenu>
+                
+                <p:submenu label="Кафедры" icon="pi pi-building">
+                    <p:menuitem value="Список кафедр" outcome="chair"/>
+                    <p:menuitem value="Добавить кафедру" outcome="chair-edit"/>
+                </p:submenu>
+                
+                <p:submenu label="Факультеты" icon="pi pi-sitemap">
+                    <p:menuitem value="Список факультетов" outcome="faculty"/>
+                    <p:menuitem value="Добавить факультет" outcome="faculty-edit"/>
+                </p:submenu>
+                
+                <f:facet name="options">
+                    <p:button value="Вход" icon="pi pi-sign-in" outcome="login"/>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+    </div>
+    
+    <div id="content" class="container">
+        <h1>Редактирование дисциплины</h1>
+        
+        <p:messages id="messages" showDetail="true" closable="true"/>
+        
+        <!-- Отладочная информация -->
+        <p:panel header="Информация об объекте (только для отладки)" rendered="#{true}" styleClass="mb-3" toggleable="true" collapsed="true">
+            <p>ID дисциплины: #{disciplineController.discipline.id}</p>
+            <p>EditID: #{disciplineController.editId}</p>
+            <p>Название: #{disciplineController.discipline.nameDiscipline}</p>
+            <p>ID выбранной кафедры: #{disciplineController.selectedChairId}</p>
+            <p>Кафедра: #{disciplineController.discipline.chair != null ? disciplineController.discipline.chair.nameChair : 'Не выбрана'}</p>
+            <p>ID выбранного учебного плана: #{disciplineController.selectedCurriculumId}</p>
+            <p>Учебный план: #{disciplineController.discipline.curriculum != null ? disciplineController.discipline.curriculum.nameCurriculum : 'Не выбран'}</p>
+        </p:panel>
+        
+        <h:form id="disciplineForm">
+            <!-- Скрытое поле для ID -->
+            <h:inputHidden value="#{disciplineController.discipline.id}" />
+            <!-- Скрытое поле для editId -->
+            <h:inputHidden value="#{disciplineController.editId}" />
+            
+            <p:panel>
+                <div class="p-field p-grid">
+                    <p:outputLabel for="name" styleClass="p-col-12 p-md-3" value="Название:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:inputText id="name" value="#{disciplineController.discipline.nameDiscipline}" required="true" requiredMessage="Введите название дисциплины" style="width: 100%"/>
+                    </div>
+                </div>
+
+                <div class="p-field p-grid">
+                    <p:outputLabel for="chair" styleClass="p-col-12 p-md-3" value="Кафедра:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:selectOneMenu id="chair" value="#{disciplineController.selectedChairId}" style="width: 100%" required="true" requiredMessage="Выберите кафедру">
+                            <f:selectItem itemLabel="Выберите кафедру" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{chairController.chairs}" var="ch" itemLabel="#{ch.nameChair}" itemValue="#{ch.id}"/>
+                            <p:ajax update="@this" />
+                        </p:selectOneMenu>
+                        <p:message for="chair" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel for="curriculum" styleClass="p-col-12 p-md-3" value="Учебный план:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:selectOneMenu id="curriculum" value="#{disciplineController.selectedCurriculumId}" style="width: 100%" required="true" requiredMessage="Выберите учебный план">
+                            <f:selectItem itemLabel="Выберите учебный план" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{curriculumController.curriculums}" var="curr" itemLabel="#{curr.nameCurriculum}" itemValue="#{curr.id}"/>
+                            <p:ajax update="@this" />
+                        </p:selectOneMenu>
+                        <p:message for="curriculum" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel for="course" styleClass="p-col-12 p-md-3" value="Курс:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:inputNumber id="course" value="#{disciplineController.discipline.course}" minValue="1" maxValue="6" required="true" requiredMessage="Введите курс" style="width: 100%"/>
+                        <p:message for="course" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel for="semester" styleClass="p-col-12 p-md-3" value="Семестр:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:inputNumber id="semester" value="#{disciplineController.discipline.semester}" minValue="1" maxValue="12" required="true" requiredMessage="Введите семестр" style="width: 100%"/>
+                        <p:message for="semester" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel for="lecture" styleClass="p-col-12 p-md-3" value="Часы лекций:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:inputNumber id="lecture" value="#{disciplineController.discipline.lecture}" minValue="0" required="true" requiredMessage="Введите часы лекций" style="width: 100%"/>
+                        <p:message for="lecture" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel for="laboratory" styleClass="p-col-12 p-md-3" value="Часы лабораторных:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:inputNumber id="laboratory" value="#{disciplineController.discipline.laboratory}" minValue="0" required="true" requiredMessage="Введите часы лабораторных" style="width: 100%"/>
+                        <p:message for="laboratory" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel for="practical" styleClass="p-col-12 p-md-3" value="Часы практических:"/>
+                    <div class="p-col-12 p-md-9">
+                        <p:inputNumber id="practical" value="#{disciplineController.discipline.practical}" minValue="0" required="true" requiredMessage="Введите часы практических" style="width: 100%"/>
+                        <p:message for="practical" />
+                    </div>
+                </div>
+                
+                <div class="p-field p-grid">
+                    <p:outputLabel styleClass="p-col-12 p-md-3" value="Форма контроля:"/>
+                    <div class="p-col-12 p-md-9">
+                        <div class="p-field-checkbox">
+                            <p:selectBooleanCheckbox id="examen" value="#{disciplineController.discipline.examen}"/>
+                            <p:outputLabel for="examen" value="Экзамен" style="margin-left: 5px;"/>
+                        </div>
+                        <div class="p-field-checkbox">
+                            <p:selectBooleanCheckbox id="setOff" value="#{disciplineController.discipline.setOff}"/>
+                            <p:outputLabel for="setOff" value="Зачет" style="margin-left: 5px;"/>
+                        </div>
+                    </div>
+                </div>
+            </p:panel>
+            
+            <div class="p-d-flex p-jc-end mt-3">
+                <p:commandButton value="Отмена" styleClass="ui-button-secondary mr-2" immediate="true" action="discipline"/>
+                <p:commandButton value="Сохранить" icon="pi pi-check" styleClass="ui-button-primary" action="#{disciplineController.save}"/>
+            </div>
+        </h:form>
+    </div>
+    
+    <div id="footer">
+        <div class="container">
+            <p>© 2023 Информационная подсистема формирования учебных планов</p>
+        </div>
+    </div>
+</h:body>
+
+</html> 
