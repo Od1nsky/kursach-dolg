@@ -18,14 +18,14 @@ public class AppLifecycleListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         logger.info("============================================");
-        logger.info("Приложение формирования учебных планов запущено");
+        logger.info("Подсистема работы с ценными бумагами запущена");
         logger.info("============================================");
     }
     
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         logger.info("============================================");
-        logger.info("Приложение формирования учебных планов остановлено");
+        logger.info("Подсистема работы с ценными бумагами остановлена");
         logger.info("============================================");
     }
 } 

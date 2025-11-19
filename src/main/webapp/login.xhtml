@@ -101,7 +101,7 @@
             <h2>Вход в систему</h2>
             
             <!-- Альтернативная форма входа с использованием собственного сервлета -->
-            <form method="post" action="/kursach_war/loginServlet">
+            <form method="post" action="#{request.contextPath}/loginServlet">
                 <div class="p-field">
                     <label for="j_username">Имя пользователя:</label>
                     <input type="text" id="j_username" name="j_username" required="required" class="p-inputtext" />

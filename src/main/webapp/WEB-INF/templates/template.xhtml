@@ -7,7 +7,7 @@
 <h:head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><ui:insert name="title">Система учебных планов</ui:insert></title>
+    <title><ui:insert name="title">Информационная подсистема по ценным бумагам</ui:insert></title>
     <h:outputStylesheet library="css" name="style.css" />
 </h:head>
 <h:body>
@@ -15,21 +15,21 @@
         <h:form>
             <p:menubar>
                 <p:menuitem value="Главная" outcome="index" icon="pi pi-home" />
-                <p:submenu label="Учебные планы" icon="pi pi-book">
-                    <p:menuitem value="Список учебных планов" outcome="curriculum" />
-                    <p:menuitem value="Добавить учебный план" outcome="curriculum-edit" />
+                <p:submenu label="Эмитенты" icon="pi pi-globe">
+                    <p:menuitem value="Список эмитентов" outcome="issuer" />
+                    <p:menuitem value="Добавить эмитента" outcome="issuer-edit" />
                 </p:submenu>
-                <p:submenu label="Дисциплины" icon="pi pi-list">
-                    <p:menuitem value="Список дисциплин" outcome="discipline" />
-                    <p:menuitem value="Добавить дисциплину" outcome="discipline-edit" />
+                <p:submenu label="Ценные бумаги" icon="pi pi-briefcase">
+                    <p:menuitem value="Справочник бумаг" outcome="security" />
+                    <p:menuitem value="Добавить бумагу" outcome="security-edit" />
                 </p:submenu>
-                <p:submenu label="Кафедры" icon="pi pi-building">
-                    <p:menuitem value="Список кафедр" outcome="chair" />
-                    <p:menuitem value="Добавить кафедру" outcome="chair-edit" />
+                <p:submenu label="Инвестиционные счета" icon="pi pi-wallet">
+                    <p:menuitem value="Список счетов" outcome="account" />
+                    <p:menuitem value="Открыть счёт" outcome="account-edit" />
                 </p:submenu>
-                <p:submenu label="Факультеты" icon="pi pi-sitemap">
-                    <p:menuitem value="Список факультетов" outcome="faculty" />
-                    <p:menuitem value="Добавить факультет" outcome="faculty-edit" />
+                <p:submenu label="Сделки" icon="pi pi-chart-line">
+                    <p:menuitem value="Журнал сделок" outcome="transaction" />
+                    <p:menuitem value="Новая сделка" outcome="transaction-edit" />
                 </p:submenu>
                 
                 <f:facet name="options">
@@ -61,7 +61,7 @@
     
     <div id="footer">
         <div class="container">
-            <p>© 2023 Информационная подсистема формирования учебных планов</p>
+            <p>© 2025 Информационная подсистема для работы с ценными бумагами</p>
         </div>
     </div>
 </h:body>
