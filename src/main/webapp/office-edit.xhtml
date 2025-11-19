@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">#{branchOfficeController.editId != null ? 'Редактирование офиса' : 'Новый офис'}</ui:define>
+    <ui:define name="pageTitle">#{branchOfficeController.editId != null ? 'Редактировать офис' : 'Создать офис'}</ui:define>
+
+    <ui:define name="content">
+        <h:form id="officeEditForm" styleClass="edit-form">
+            <p:panel header="Информация об офисе">
+                <div class="p-field">
+                    <p:outputLabel for="title" value="Название"/>
+                    <p:inputText id="title"
+                                 value="#{branchOfficeController.office.title}"
+                                 required="true"
+                                 requiredMessage="Укажите название офиса"
+                                 style="width: 100%"/>
+                    <p:message for="title"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="city" value="Город"/>
+                    <p:inputText id="city"
+                                 value="#{branchOfficeController.office.city}"
+                                 required="true"
+                                 requiredMessage="Укажите город"
+                                 style="width: 100%"/>
+                    <p:message for="city"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="region" value="Регион"/>
+                    <p:selectOneMenu id="region"
+                                     value="#{branchOfficeController.selectedRegionId}"
+                                     converter="jakarta.faces.Long"
+                                     style="width: 100%">
+                        <f:selectItem itemLabel="Выберите регион" itemValue="#{null}" noSelectionOption="true"/>
+                        <f:selectItems value="#{branchOfficeController.regions}"
+                                       var="reg"
+                                       itemLabel="#{reg.name}"
+                                       itemValue="#{reg.id}"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="manager" value="Руководитель"/>
+                    <p:inputText id="manager"
+                                 value="#{branchOfficeController.office.managerName}"
+                                 style="width: 100%"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="phone" value="Телефон"/>
+                    <p:inputText id="phone"
+                                 value="#{branchOfficeController.office.phone}"
+                                 style="width: 100%"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="address" value="Адрес"/>
+                    <p:inputTextarea id="address"
+                                     value="#{branchOfficeController.office.address}"
+                                     rows="3"
+                                     autoResize="true"
+                                     style="width: 100%"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="opened" value="Дата открытия"/>
+                    <p:datePicker id="opened"
+                                  value="#{branchOfficeController.office.openedDate}"
+                                  pattern="dd.MM.yyyy"
+                                  showIcon="true"
+                                  style="width: 100%"/>
+                </div>
+
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить"
+                                     icon="pi pi-check"
+                                     styleClass="ui-button-success"
+                                     action="#{branchOfficeController.save}"/>
+                    <p:button value="Отмена"
+                              outcome="office"
+                              icon="pi pi-times"
+                              styleClass="ui-button-secondary"/>
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
+

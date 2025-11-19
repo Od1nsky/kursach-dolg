@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">Отчеты представителей</ui:define>
+    <ui:define name="pageTitle">Рабочие отчеты</ui:define>
+
+    <ui:define name="content">
+        <p:panel styleClass="mb-3">
+            <h:form id="reportSearchForm">
+                <div class="p-grid p-ai-end">
+                    <div class="p-col-12 p-md-3">
+                        <p:datePicker value="#{representativeReportController.filterFrom}"
+                                      pattern="dd.MM.yyyy"
+                                      placeholder="Период с"
+                                      showIcon="true"
+                                      style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <p:datePicker value="#{representativeReportController.filterTo}"
+                                      pattern="dd.MM.yyyy"
+                                      placeholder="Период по"
+                                      showIcon="true"
+                                      style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <p:selectOneMenu value="#{representativeReportController.filterRepresentativeId}"
+                                         style="width: 100%">
+                            <f:selectItem itemLabel="Все представители" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{representativeReportController.representatives}"
+                                           var="rep"
+                                           itemLabel="#{rep.fullName}"
+                                           itemValue="#{rep.id}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="p-col-12 p-md-1">
+                        <p:commandButton value="Найти"
+                                         icon="pi pi-search"
+                                         styleClass="ui-button-success"
+                                         action="#{representativeReportController.search}"
+                                         update=":reportTableForm"
+                                         style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-1">
+                        <p:commandButton value="Сбросить"
+                                         icon="pi pi-times"
+                                         styleClass="ui-button-secondary"
+                                         action="#{representativeReportController.resetSearch}"
+                                         update=":reportSearchForm :reportTableForm"
+                                         style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-1">
+                        <p:button value="Добавить отчет"
+                                  icon="pi pi-plus"
+                                  outcome="report-edit"
+                                  styleClass="ui-button-primary"
+                                  style="width: 100%"/>
+                    </div>
+                </div>
+            </h:form>
+        </p:panel>
+
+        <p:panel>
+            <h:form id="reportTableForm">
+                <p:dataTable value="#{representativeReportController.reports}"
+                             var="report"
+                             emptyMessage="Отчеты не найдены">
+                    <p:column headerText="Представитель">
+                        <h:outputText value="#{report.representative != null ? report.representative.fullName : 'Не указан'}"/>
+                        <h:panelGroup rendered="#{report.representative != null and report.representative.branchOffice != null}">
+                            <br/>
+                            <h:outputText value="#{report.representative.branchOffice.title}"
+                                          styleClass="text-muted"/>
+                        </h:panelGroup>
+                    </p:column>
+                    <p:column headerText="Период">
+                        <h:outputText value="#{report.periodStart}">
+                            <f:convertDateTime pattern="dd.MM.yyyy"/>
+                        </h:outputText>
+                        <span> — </span>
+                        <h:outputText value="#{report.periodEnd}">
+                            <f:convertDateTime pattern="dd.MM.yyyy"/>
+                        </h:outputText>
+                    </p:column>
+                    <p:column headerText="Показатели">
+                        <ul class="report-metrics">
+                            <li>
+                                <span>Новых клиентов:</span>
+                                <strong><h:outputText value="#{report.newClients}"/></strong>
+                            </li>
+                            <li>
+                                <span>Объем продаж:</span>
+                                <strong><h:outputText value="#{report.salesVolume}"/></strong>
+                            </li>
+                            <li>
+                                <span>Встреч:</span>
+                                <strong><h:outputText value="#{report.meetingsHeld}"/></strong>
+                            </li>
+                        </ul>
+                    </p:column>
+                    <p:column headerText="Фокус / вопросы">
+                        <h:outputText value="#{report.focusProducts}" rendered="#{not empty report.focusProducts}"/>
+                        <h:panelGroup rendered="#{not empty report.keyIssues}">
+                            <br/>
+                            <h:outputText value="#{report.keyIssues}"/>
+                        </h:panelGroup>
+                    </p:column>
+                    <p:column headerText="Итоги">
+                        <h:outputText value="#{report.summary}"/>
+                    </p:column>
+                    <p:column styleClass="action-column">
+                        <p:commandButton icon="pi pi-pencil"
+                                         styleClass="rounded-button ui-button-warning mr-2"
+                                         action="#{representativeReportController.edit(report.id)}"
+                                         title="Редактировать"/>
+                        <p:commandButton icon="pi pi-trash"
+                                         styleClass="rounded-button ui-button-danger"
+                                         action="#{representativeReportController.delete(report.id)}"
+                                         update="@form"
+                                         title="Удалить"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </p:panel>
+    </ui:define>
+</ui:composition>
+</html>
+

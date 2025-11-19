@@ -5,7 +5,7 @@
     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
     version="5.0">
     
-    <display-name>Информационная подсистема формирования учебных планов</display-name>
+    <display-name>Информационная система региональных представителей</display-name>
     
     <welcome-file-list>
         <welcome-file>index.xhtml</welcome-file>
@@ -109,10 +109,10 @@
         <web-resource-collection>
             <web-resource-name>Protected Area</web-resource-name>
             <url-pattern>/protected/*</url-pattern>
-            <url-pattern>/curriculum.xhtml</url-pattern>
-            <url-pattern>/discipline.xhtml</url-pattern>
-            <url-pattern>/chair.xhtml</url-pattern>
-            <url-pattern>/faculty.xhtml</url-pattern>
+            <url-pattern>/region.xhtml</url-pattern>
+            <url-pattern>/office.xhtml</url-pattern>
+            <url-pattern>/representative.xhtml</url-pattern>
+            <url-pattern>/report.xhtml</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>ADMIN</role-name>

@@ -18,7 +18,7 @@ public class EntityManagerProducer {
     @PostConstruct
     public void init() {
         if (emf == null) {
-            emf = Persistence.createEntityManagerFactory("curriculumPU");
+            emf = Persistence.createEntityManagerFactory("regionalNetworkPU");
         }
     }
 

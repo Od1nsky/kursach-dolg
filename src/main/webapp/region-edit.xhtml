@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">#{regionController.editId != null ? 'Редактирование региона' : 'Новый регион'}</ui:define>
+    <ui:define name="pageTitle">#{regionController.editId != null ? 'Редактировать регион' : 'Создать регион'}</ui:define>
+
+    <ui:define name="content">
+        <h:form id="regionEditForm" styleClass="edit-form">
+            <p:panel header="Параметры региона">
+                <div class="p-field">
+                    <p:outputLabel for="name" value="Название региона"/>
+                    <p:inputText id="name"
+                                 value="#{regionController.region.name}"
+                                 required="true"
+                                 requiredMessage="Введите название региона"
+                                 style="width: 100%"/>
+                    <p:message for="name"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="code" value="Код региона"/>
+                    <p:inputText id="code"
+                                 value="#{regionController.region.regionCode}"
+                                 required="true"
+                                 requiredMessage="Введите код региона"
+                                 style="width: 100%"/>
+                    <p:message for="code"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="curator" value="Куратор"/>
+                    <p:inputText id="curator"
+                                 value="#{regionController.region.curatorName}"
+                                 style="width: 100%"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="phone" value="Телефон"/>
+                    <p:inputText id="phone"
+                                 value="#{regionController.region.contactPhone}"
+                                 style="width: 100%"/>
+                </div>
+
+                <div class="p-field">
+                    <p:outputLabel for="email" value="Электронная почта"/>
+                    <p:inputText id="email"
+                                 value="#{regionController.region.contactEmail}"
+                                 style="width: 100%"/>
+                </div>
+
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить"
+                                     icon="pi pi-check"
+                                     styleClass="ui-button-success"
+                                     action="#{regionController.save}"/>
+                    <p:button value="Отмена"
+                              outcome="region"
+                              icon="pi pi-times"
+                              styleClass="ui-button-secondary"/>
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
+

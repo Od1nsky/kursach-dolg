@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">Региональные представители</ui:define>
+    <ui:define name="pageTitle">Каталог представителей</ui:define>
+
+    <ui:define name="content">
+        <p:panel styleClass="mb-3">
+            <h:form id="representativeSearchForm">
+                <div class="p-grid p-ai-end">
+                    <div class="p-col-12 p-md-3">
+                        <p:inputText value="#{representativeController.searchTerm}"
+                                     placeholder="ФИО или специализация"
+                                     style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <p:selectOneMenu value="#{representativeController.filterStatus}" style="width: 100%">
+                            <f:selectItem itemLabel="Все статусы" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{representativeController.statuses}"
+                                           var="status"
+                                           itemLabel="#{status.label}"
+                                           itemValue="#{status}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <p:selectOneMenu value="#{representativeController.filterRegionId}" style="width: 100%">
+                            <f:selectItem itemLabel="Все регионы" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{representativeController.regions}"
+                                           var="region"
+                                           itemLabel="#{region.name}"
+                                           itemValue="#{region.id}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <p:selectOneMenu value="#{representativeController.filterOfficeId}" style="width: 100%">
+                            <f:selectItem itemLabel="Все офисы" itemValue="#{null}" noSelectionOption="true"/>
+                            <f:selectItems value="#{representativeController.allOffices}"
+                                           var="office"
+                                           itemLabel="#{office.title} (#{office.city})"
+                                           itemValue="#{office.id}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="p-col-12 p-md-2">
+                        <p:commandButton value="Найти"
+                                         icon="pi pi-search"
+                                         styleClass="ui-button-success"
+                                         action="#{representativeController.search}"
+                                         update=":representativeTableForm"
+                                         style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-2">
+                        <p:commandButton value="Сбросить"
+                                         icon="pi pi-times"
+                                         styleClass="ui-button-secondary"
+                                         action="#{representativeController.resetSearch}"
+                                         update=":representativeSearchForm :representativeTableForm"
+                                         style="width: 100%"/>
+                    </div>
+                    <div class="p-col-12 p-md-2">
+                        <p:button value="Добавить представителя"
+                                  icon="pi pi-plus"
+                                  outcome="representative-edit"
+                                  styleClass="ui-button-primary"
+                                  style="width: 100%"/>
+                    </div>
+                </div>
+            </h:form>
+        </p:panel>
+
+        <p:panel>
+            <h:form id="representativeTableForm">
+                <p:dataTable value="#{representativeController.representatives}"
+                             var="rep"
+                             emptyMessage="Представители не найдены">
+                    <p:column headerText="ФИО">
+                        <h:outputText value="#{rep.fullName}"/>
+                        <br/>
+                        <h:outputText value="#{rep.positionTitle}" styleClass="text-muted"/>
+                    </p:column>
+                    <p:column headerText="Регион / Офис">
+                        <h:outputText value="#{rep.region != null ? rep.region.name : 'Регион не указан'}"/>
+                        <br/>
+                        <h:outputText value="#{rep.branchOffice != null ? rep.branchOffice.title : 'Офис не указан'}"
+                                      styleClass="text-muted"/>
+                    </p:column>
+                    <p:column headerText="Статус">
+                        <p:tag value="#{rep.status.label}" styleClass="p-mr-2"/>
+                        <h:outputText value="Стаж: #{rep.experienceYears} лет" rendered="#{rep.experienceYears != null}"/>
+                    </p:column>
+                    <p:column headerText="Контакты">
+                        <h:panelGroup layout="block">
+                            <h:outputText value="#{rep.phone}" rendered="#{not empty rep.phone}"/>
+                            <br/>
+                            <h:outputText value="#{rep.email}" rendered="#{not empty rep.email}"/>
+                        </h:panelGroup>
+                    </p:column>
+                    <p:column headerText="Специализация">
+                        <h:outputText value="#{rep.specialization}"/>
+                    </p:column>
+                    <p:column styleClass="action-column">
+                        <p:commandButton icon="pi pi-pencil"
+                                         styleClass="rounded-button ui-button-warning mr-2"
+                                         action="#{representativeController.edit(rep.id)}"
+                                         title="Редактировать"/>
+                        <p:commandButton icon="pi pi-trash"
+                                         styleClass="rounded-button ui-button-danger"
+                                         action="#{representativeController.delete(rep.id)}"
+                                         update="@form"
+                                         title="Удалить"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </p:panel>
+    </ui:define>
+</ui:composition>
+</html>
+

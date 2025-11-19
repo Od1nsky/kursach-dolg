@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">#{representativeReportController.editId != null ? 'Редактирование отчета' : 'Новый отчет'}</ui:define>
+    <ui:define name="pageTitle">#{representativeReportController.editId != null ? 'Редактировать отчет' : 'Создать отчет'}</ui:define>
+
+    <ui:define name="content">
+        <h:form id="reportEditForm" styleClass="edit-form">
+            <p:panel header="Детали отчета">
+                <div class="p-grid">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-field">
+                            <p:outputLabel for="representative" value="Представитель"/>
+                            <p:selectOneMenu id="representative"
+                                             value="#{representativeReportController.selectedRepresentativeId}"
+                                             converter="jakarta.faces.Long"
+                                             required="true"
+                                             requiredMessage="Выберите представителя"
+                                             style="width: 100%">
+                                <f:selectItem itemLabel="Выберите представителя" itemValue="#{null}" noSelectionOption="true"/>
+                                <f:selectItems value="#{representativeReportController.representatives}"
+                                               var="rep"
+                                               itemLabel="#{rep.fullName}"
+                                               itemValue="#{rep.id}"/>
+                            </p:selectOneMenu>
+                            <p:message for="representative"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <div class="p-field">
+                            <p:outputLabel for="periodStart" value="Дата начала"/>
+                            <p:datePicker id="periodStart"
+                                          value="#{representativeReportController.report.periodStart}"
+                                          pattern="dd.MM.yyyy"
+                                          showIcon="true"
+                                          style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-3">
+                        <div class="p-field">
+                            <p:outputLabel for="periodEnd" value="Дата окончания"/>
+                            <p:datePicker id="periodEnd"
+                                          value="#{representativeReportController.report.periodEnd}"
+                                          pattern="dd.MM.yyyy"
+                                          showIcon="true"
+                                          style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="clients" value="Новых клиентов"/>
+                            <p:inputNumber id="clients"
+                                           value="#{representativeReportController.report.newClients}"
+                                           minValue="0"
+                                           useGrouping="false"
+                                           style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="sales" value="Объем продаж"/>
+                            <p:inputNumber id="sales"
+                                           value="#{representativeReportController.report.salesVolume}"
+                                           minValue="0"
+                                           decimalPlaces="2"
+                                           symbol=" ₽"
+                                           style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="meetings" value="Встреч проведено"/>
+                            <p:inputNumber id="meetings"
+                                           value="#{representativeReportController.report.meetingsHeld}"
+                                           minValue="0"
+                                           useGrouping="false"
+                                           style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-field">
+                            <p:outputLabel for="focus" value="Фокусные продукты"/>
+                            <p:inputTextarea id="focus"
+                                             value="#{representativeReportController.report.focusProducts}"
+                                             rows="2"
+                                             autoResize="true"
+                                             style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-field">
+                            <p:outputLabel for="issues" value="Ключевые вопросы"/>
+                            <p:inputTextarea id="issues"
+                                             value="#{representativeReportController.report.keyIssues}"
+                                             rows="2"
+                                             autoResize="true"
+                                             style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12">
+                        <div class="p-field">
+                            <p:outputLabel for="summary" value="Выводы и договоренности"/>
+                            <p:inputTextarea id="summary"
+                                             value="#{representativeReportController.report.summary}"
+                                             rows="3"
+                                             autoResize="true"
+                                             style="width: 100%"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить"
+                                     icon="pi pi-check"
+                                     styleClass="ui-button-success"
+                                     action="#{representativeReportController.save}"/>
+                    <p:button value="Отмена"
+                              outcome="report"
+                              icon="pi pi-times"
+                              styleClass="ui-button-secondary"/>
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
+

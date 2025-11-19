@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">#{representativeController.editId != null ? 'Редактирование представителя' : 'Новый представитель'}</ui:define>
+    <ui:define name="pageTitle">#{representativeController.editId != null ? 'Редактировать представителя' : 'Создать представителя'}</ui:define>
+
+    <ui:define name="content">
+        <h:form id="representativeEditForm" styleClass="edit-form">
+            <p:panel header="Основные сведения">
+                <div class="p-grid">
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-field">
+                            <p:outputLabel for="fullName" value="ФИО"/>
+                            <p:inputText id="fullName"
+                                         value="#{representativeController.representative.fullName}"
+                                         required="true"
+                                         requiredMessage="Введите ФИО"
+                                         style="width: 100%"/>
+                            <p:message for="fullName"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-6">
+                        <div class="p-field">
+                            <p:outputLabel for="position" value="Должность"/>
+                            <p:inputText id="position"
+                                         value="#{representativeController.representative.positionTitle}"
+                                         style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="status" value="Статус"/>
+                            <p:selectOneMenu id="status"
+                                             value="#{representativeController.representative.status}"
+                                             style="width: 100%">
+                                <f:selectItems value="#{representativeController.statuses}"
+                                               var="status"
+                                               itemLabel="#{status.label}"
+                                               itemValue="#{status}"/>
+                            </p:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="email" value="Email"/>
+                            <p:inputText id="email"
+                                         value="#{representativeController.representative.email}"
+                                         style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="phone" value="Телефон"/>
+                            <p:inputText id="phone"
+                                         value="#{representativeController.representative.phone}"
+                                         style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="region" value="Регион"/>
+                            <p:selectOneMenu id="region"
+                                             value="#{representativeController.selectedRegionId}"
+                                             converter="jakarta.faces.Long"
+                                             style="width: 100%">
+                                <f:selectItem itemLabel="Выберите регион" itemValue="#{null}" noSelectionOption="true"/>
+                                <f:selectItems value="#{representativeController.regions}"
+                                               var="region"
+                                               itemLabel="#{region.name}"
+                                               itemValue="#{region.id}"/>
+                                <p:ajax listener="#{representativeController.updateOfficeOptions}"
+                                        update="office"/>
+                            </p:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="office" value="Офис"/>
+                            <p:selectOneMenu id="office"
+                                             value="#{representativeController.selectedOfficeId}"
+                                             converter="jakarta.faces.Long"
+                                             style="width: 100%">
+                                <f:selectItem itemLabel="Выберите офис" itemValue="#{null}" noSelectionOption="true"/>
+                                <f:selectItems value="#{representativeController.officeOptions}"
+                                               var="office"
+                                               itemLabel="#{office.title} (#{office.city})"
+                                               itemValue="#{office.id}"/>
+                            </p:selectOneMenu>
+                        </div>
+                    </div>
+                    <div class="p-col-12 p-md-4">
+                        <div class="p-field">
+                            <p:outputLabel for="experience" value="Опыт (лет)"/>
+                            <p:inputNumber id="experience"
+                                           value="#{representativeController.representative.experienceYears}"
+                                           minValue="0"
+                                           useGrouping="false"
+                                           style="width: 100%"/>
+                        </div>
+                    </div>
+                    <div class="p-col-12">
+                        <div class="p-field">
+                            <p:outputLabel for="specialization" value="Ключевые продукты / специализация"/>
+                            <p:inputTextarea id="specialization"
+                                             value="#{representativeController.representative.specialization}"
+                                             rows="3"
+                                             autoResize="true"
+                                             style="width: 100%"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить"
+                                     icon="pi pi-check"
+                                     styleClass="ui-button-success"
+                                     action="#{representativeController.save}"/>
+                    <p:button value="Отмена"
+                              outcome="representative"
+                              icon="pi pi-times"
+                              styleClass="ui-button-secondary"/>
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>
+
