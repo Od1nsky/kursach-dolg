@@ -1,0 +1,319 @@
+04-Dec-2025 07:21:33.444 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.20
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 19 2024 12:49:58 UTC
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.20.0
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Mac OS X
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            15.6
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          aarch64
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.1+12-LTS-29
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10
+04-Dec-2025 07:21:33.446 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10
+04-Dec-2025 07:21:33.451 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/conf/logging.properties
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10
+04-Dec-2025 07:21:33.452 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/temp
+04-Dec-2025 07:21:33.458 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/Users/vladislavkapustian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+04-Dec-2025 07:21:33.605 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+04-Dec-2025 07:21:33.621 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [252] milliseconds
+04-Dec-2025 07:21:33.638 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+04-Dec-2025 07:21:33.638 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.20]
+04-Dec-2025 07:21:33.650 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/kursach.war]
+04-Dec-2025 07:21:34.766 INFO [main] org.jboss.weld.environment.servlet.EnhancedListener.onStartup WELD-ENV-001008: Initialize Weld using ServletContainerInitializer
+04-Dec-2025 07:21:34.779 INFO [main] org.jboss.weld.bootstrap.WeldStartup.<clinit> WELD-000900: 4.0.3 (Final)
+04-Dec-2025 07:21:34.851 INFO [main] org.jboss.weld.environment.deployment.discovery.DiscoveryStrategyFactory.create WELD-ENV-000020: Using jandex for bean discovery
+04-Dec-2025 07:21:34.966 INFO [main] org.jboss.weld.bootstrap.WeldStartup.startContainer WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+04-Dec-2025 07:21:35.113 INFO [main] org.jboss.weld.environment.tomcat.TomcatContainer.initialize WELD-ENV-001100: Tomcat 7+ detected, CDI injection will be available in Servlets, Filters and Listeners.
+04-Dec-2025 07:21:35.260 INFO [main] org.jboss.weld.environment.servlet.Listener.contextInitialized WELD-ENV-001006: org.jboss.weld.environment.servlet.EnhancedListener used to initialize Weld
+04-Dec-2025 07:21:35.276 INFO [main] com.sun.faces.config.ConfigureListener.contextInitialized Initializing Mojarra 3.0.2 for context '/kursach'
+04-Dec-2025 07:21:35.339 INFO [main] com.sun.faces.spi.InjectionProviderFactory.createInstance JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+04-Dec-2025 07:21:35.634 INFO [main] com.sun.faces.config.ConfigureListener$WebConfigResourceMonitor$Monitor.<init> Monitoring file:/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/kursach/WEB-INF/faces-config.xml for modifications
+04-Dec-2025 07:21:35.664 INFO [main] org.primefaces.webapp.PostConstructApplicationEventListener.processEvent Running on PrimeFaces 12.0.0
+04-Dec-2025 07:21:35.664 INFO [main] org.kursach.kursach.config.SecurityConfig.contextInitialized Инициализация интеграции JSF с CDI
+04-Dec-2025 07:21:35.665 INFO [main] org.kursach.kursach.config.AppLifecycleListener.contextInitialized ============================================
+04-Dec-2025 07:21:35.665 INFO [main] org.kursach.kursach.config.AppLifecycleListener.contextInitialized Приложение учета продаж сервисов запущено
+04-Dec-2025 07:21:35.665 INFO [main] org.kursach.kursach.config.AppLifecycleListener.contextInitialized ============================================
+04-Dec-2025 07:21:35.665 INFO [main] org.jboss.weld.environment.servlet.EnhancedListener.contextInitialized WELD-ENV-001009: org.jboss.weld.environment.servlet.Listener used for ServletRequest and HttpSession notifications
+04-Dec-2025 07:21:35.684 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/kursach.war] has finished in [2,034] ms
+04-Dec-2025 07:21:35.684 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/docs]
+04-Dec-2025 07:21:35.695 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/docs] has finished in [11] ms
+04-Dec-2025 07:21:35.695 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/manager]
+04-Dec-2025 07:21:35.710 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/manager] has finished in [15] ms
+04-Dec-2025 07:21:35.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/examples]
+04-Dec-2025 07:21:35.793 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/examples] has finished in [82] ms
+04-Dec-2025 07:21:35.794 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/ROOT]
+04-Dec-2025 07:21:35.802 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/ROOT] has finished in [8] ms
+04-Dec-2025 07:21:35.802 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/host-manager]
+04-Dec-2025 07:21:35.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [/Users/vladislavkapustian/Documents/FRONT/kursa/kursach_javaEE/apache-tomcat-10/webapps/host-manager] has finished in [9] ms
+04-Dec-2025 07:21:35.813 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+04-Dec-2025 07:21:35.823 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [2201] milliseconds
+04-Dec-2025 07:21:54.263 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/
+04-Dec-2025 07:21:54.264 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Сессия отсутствует, создаем новую
+04-Dec-2025 07:21:54.265 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.SessionListener.sessionCreated Сессия создана: 276A019696ECE636F7D4EA4666E40875
+04-Dec-2025 07:21:54.268 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Пользователь не авторизован, перенаправление на страницу входа
+04-Dec-2025 07:22:44.746 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/index.xhtml
+04-Dec-2025 07:22:44.746 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Сессия отсутствует, создаем новую
+04-Dec-2025 07:22:44.747 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.SessionListener.sessionCreated Сессия создана: F4E5EEF02C240BD8E15BD46CC853934D
+04-Dec-2025 07:22:44.747 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Пользователь не авторизован, перенаправление на страницу входа
+04-Dec-2025 07:22:44.785 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/login.xhtml
+04-Dec-2025 07:22:45.062 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:22:45.062 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Пользователь не авторизован, перенаправление на страницу входа
+04-Dec-2025 07:22:45.063 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:22:45.064 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Пользователь не авторизован, перенаправление на страницу входа
+04-Dec-2025 07:22:45.065 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:22:45.065 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Пользователь не авторизован, перенаправление на страницу входа
+04-Dec-2025 07:22:45.069 INFO [http-nio-8081-exec-7] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/login.xhtml
+04-Dec-2025 07:22:45.075 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/login.xhtml
+04-Dec-2025 07:22:45.082 INFO [http-nio-8081-exec-9] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/login.xhtml
+04-Dec-2025 07:22:53.654 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/index.xhtml
+04-Dec-2025 07:22:53.771 INFO [http-nio-8081-exec-1] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation HHH000204: Processing PersistenceUnitInfo [name: curriculumPU]
+04-Dec-2025 07:22:53.814 INFO [http-nio-8081-exec-1] org.hibernate.Version.logVersion HHH000412: Hibernate ORM core version 6.0.2.Final
+04-Dec-2025 07:22:53.910 WARN [http-nio-8081-exec-1] org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.normalizeTransactionCoordinator HHH000193: Overriding hibernate.transaction.coordinator_class is dangerous, this might break the EJB3 specification implementation
+04-Dec-2025 07:22:53.922 INFO [http-nio-8081-exec-1] org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator.resolveBeanContainer HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+04-Dec-2025 07:22:54.033 WARN [http-nio-8081-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure HHH10001002: Using built-in connection pool (not intended for production use)
+04-Dec-2025 07:22:54.035 INFO [http-nio-8081-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+04-Dec-2025 07:22:54.035 INFO [http-nio-8081-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/kursach]
+04-Dec-2025 07:22:54.035 INFO [http-nio-8081-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001001: Connection properties: {password=****, handling_mode=DELAYED_ACQUISITION_AND_RELEASE_AFTER_TRANSACTION, user=project_role}
+04-Dec-2025 07:22:54.035 INFO [http-nio-8081-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildCreator HHH10001003: Autocommit mode: false
+04-Dec-2025 07:22:54.037 INFO [http-nio-8081-exec-1] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init> HHH10001115: Connection pool size: 20 (min=1)
+04-Dec-2025 07:22:54.114 INFO [http-nio-8081-exec-1] org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.logSelectedDialect HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+04-Dec-2025 07:22:54.684 INFO [http-nio-8081-exec-1] org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3555be46] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: 
+    select
+        count(c1_0.id) 
+    from
+        client c1_0
+04-Dec-2025 07:22:55.021 INFO [http-nio-8081-exec-1] org.kursach.kursach.config.DataInitializer.init База данных уже содержит данные, инициализация пропущена
+04-Dec-2025 07:22:55.189 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:22:55.190 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:22:55.190 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:22:55.191 INFO [http-nio-8081-exec-7] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery-plugins.js.xhtml
+04-Dec-2025 07:22:55.192 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.css.xhtml
+04-Dec-2025 07:22:55.192 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery.js.xhtml
+04-Dec-2025 07:22:55.295 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/core.js.xhtml
+04-Dec-2025 07:22:55.295 INFO [http-nio-8081-exec-9] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
+04-Dec-2025 07:22:55.405 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml
+04-Dec-2025 07:22:58.894 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/payment.xhtml
+Hibernate: 
+    select
+        p1_0.id,
+        p1_0.amount,
+        p1_0.client_id,
+        p1_0.date,
+        p1_0.quantity,
+        p1_0.service_id 
+    from
+        payment p1_0
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.phone,
+        c1_0.status 
+    from
+        client c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.phone,
+        c1_0.status 
+    from
+        client c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.phone,
+        c1_0.status 
+    from
+        client c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0 
+    where
+        s1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.phone,
+        c1_0.status 
+    from
+        client c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.email,
+        c1_0.first_name,
+        c1_0.last_name,
+        c1_0.phone,
+        c1_0.status 
+    from
+        client c1_0 
+    where
+        c1_0.id=?
+04-Dec-2025 07:22:59.008 INFO [http-nio-8081-exec-1] org.kursach.kursach.controller.PaymentController.init Создан новый объект Payment
+04-Dec-2025 07:22:59.008 INFO [http-nio-8081-exec-1] org.kursach.kursach.controller.PaymentController.init PaymentController инициализирован
+04-Dec-2025 07:22:59.176 INFO [http-nio-8081-exec-7] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:22:59.177 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:22:59.177 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery.js.xhtml
+04-Dec-2025 07:22:59.177 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.css.xhtml
+04-Dec-2025 07:22:59.177 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:22:59.177 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery-plugins.js.xhtml
+04-Dec-2025 07:22:59.185 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/core.js.xhtml
+04-Dec-2025 07:22:59.187 INFO [http-nio-8081-exec-9] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
+04-Dec-2025 07:22:59.189 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/touch/touchswipe.js.xhtml
+04-Dec-2025 07:22:59.382 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml
+04-Dec-2025 07:23:00.258 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:23:00.259 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery-plugins.js.xhtml
+04-Dec-2025 07:23:00.259 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery.js.xhtml
+04-Dec-2025 07:23:00.259 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:23:00.259 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.css.xhtml
+04-Dec-2025 07:23:00.259 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:23:00.268 INFO [http-nio-8081-exec-7] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/core.js.xhtml
+04-Dec-2025 07:23:00.268 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
+04-Dec-2025 07:23:00.371 INFO [http-nio-8081-exec-9] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml
+04-Dec-2025 07:23:00.938 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/service.xhtml
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0
+04-Dec-2025 07:23:00.967 INFO [http-nio-8081-exec-10] org.kursach.kursach.controller.ServiceController.init Создан новый объект Service
+04-Dec-2025 07:23:00.968 INFO [http-nio-8081-exec-10] org.kursach.kursach.controller.ServiceController.init ServiceController инициализирован
+04-Dec-2025 07:23:01.136 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:23:01.138 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery.js.xhtml
+04-Dec-2025 07:23:01.140 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:23:01.141 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.css.xhtml
+04-Dec-2025 07:23:01.141 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:23:01.142 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery-plugins.js.xhtml
+04-Dec-2025 07:23:01.143 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/core.js.xhtml
+04-Dec-2025 07:23:01.145 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
+04-Dec-2025 07:23:01.153 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/touch/touchswipe.js.xhtml
+04-Dec-2025 07:23:01.353 INFO [http-nio-8081-exec-9] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml
+04-Dec-2025 07:23:03.479 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/service-edit.xhtml
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0
+04-Dec-2025 07:23:03.504 INFO [http-nio-8081-exec-10] org.kursach.kursach.controller.ServiceController.init Создан новый объект Service
+04-Dec-2025 07:23:03.504 INFO [http-nio-8081-exec-10] org.kursach.kursach.controller.ServiceController.init ServiceController инициализирован
+04-Dec-2025 07:23:03.646 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:23:03.646 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:23:03.646 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.css.xhtml
+04-Dec-2025 07:23:03.647 INFO [http-nio-8081-exec-7] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery.js.xhtml
+04-Dec-2025 07:23:03.646 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery-plugins.js.xhtml
+04-Dec-2025 07:23:03.647 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:23:03.654 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/inputnumber/inputnumber.js.xhtml
+04-Dec-2025 07:23:03.654 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/inputnumber/inputnumber.css.xhtml
+04-Dec-2025 07:23:03.655 INFO [http-nio-8081-exec-9] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
+04-Dec-2025 07:23:03.655 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/core.js.xhtml
+04-Dec-2025 07:23:03.745 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml
+04-Dec-2025 07:23:07.086 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/service-edit.xhtml
+04-Dec-2025 07:23:07.107 INFO [http-nio-8081-exec-4] org.kursach.kursach.controller.ServiceController.save Создание новой услуги: 12
+Hibernate: 
+    insert 
+    into
+        service
+        (name, price) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0
+04-Dec-2025 07:23:07.131 INFO [http-nio-8081-exec-4] org.kursach.kursach.controller.ServiceController.save Услуга создана успешно
+04-Dec-2025 07:23:07.159 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/service.xhtml
+Hibernate: 
+    select
+        s1_0.id,
+        s1_0.name,
+        s1_0.price 
+    from
+        service s1_0
+04-Dec-2025 07:23:07.169 INFO [http-nio-8081-exec-1] org.kursach.kursach.controller.ServiceController.init Создан новый объект Service
+04-Dec-2025 07:23:07.169 INFO [http-nio-8081-exec-1] org.kursach.kursach.controller.ServiceController.init ServiceController инициализирован
+04-Dec-2025 07:23:07.320 INFO [http-nio-8081-exec-3] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/theme.css.xhtml
+04-Dec-2025 07:23:07.320 INFO [http-nio-8081-exec-7] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/style.css.xhtml
+04-Dec-2025 07:23:07.321 INFO [http-nio-8081-exec-5] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.css.xhtml
+04-Dec-2025 07:23:07.321 INFO [http-nio-8081-exec-8] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery-plugins.js.xhtml
+04-Dec-2025 07:23:07.322 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/jquery/jquery.js.xhtml
+04-Dec-2025 07:23:07.323 INFO [http-nio-8081-exec-6] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.css.xhtml
+04-Dec-2025 07:23:07.327 INFO [http-nio-8081-exec-10] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/core.js.xhtml
+04-Dec-2025 07:23:07.329 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
+04-Dec-2025 07:23:07.331 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/touch/touchswipe.js.xhtml
+04-Dec-2025 07:23:07.424 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml

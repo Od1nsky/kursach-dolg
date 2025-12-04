@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">Редактирование покупки - Система учета продаж сервисов</ui:define>
+    
+    <ui:define name="pageTitle">#{paymentController.editId != null ? 'Редактирование покупки' : 'Создание новой покупки'}</ui:define>
+    
+    <ui:define name="content">
+        <h:form id="editForm" styleClass="edit-form">
+            <p:panel>
+                <div class="p-field">
+                    <p:outputLabel for="client" value="Клиент:" />
+                    <p:selectOneMenu id="client" value="#{paymentController.selectedClientId}" 
+                                     required="true" requiredMessage="Выберите клиента"
+                                     style="width: 100%">
+                        <f:selectItem itemLabel="Выберите клиента" itemValue="" />
+                        <f:selectItems value="#{paymentController.clients}" 
+                                       var="client" 
+                                       itemLabel="#{client.firstName} #{client.lastName}" 
+                                       itemValue="#{client.id}" />
+                    </p:selectOneMenu>
+                    <p:message for="client" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="service" value="Услуга:" />
+                    <p:selectOneMenu id="service" value="#{paymentController.selectedServiceId}" 
+                                     required="true" requiredMessage="Выберите услугу"
+                                     style="width: 100%">
+                        <f:selectItem itemLabel="Выберите услугу" itemValue="" />
+                        <f:selectItems value="#{paymentController.services}" 
+                                       var="service" 
+                                       itemLabel="#{service.name}" 
+                                       itemValue="#{service.id}" />
+                    </p:selectOneMenu>
+                    <p:message for="service" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="date" value="Дата покупки:" />
+                    <p:calendar id="date" value="#{paymentController.payment.date}" 
+                               required="true" requiredMessage="Введите дату покупки"
+                               pattern="dd.MM.yyyy" style="width: 100%" />
+                    <p:message for="date" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="quantity" value="Количество:" />
+                    <p:inputNumber id="quantity" value="#{paymentController.payment.quantity}" 
+                                  required="true" requiredMessage="Введите количество"
+                                  style="width: 100%" />
+                    <p:message for="quantity" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="amount" value="Сумма покупки:" />
+                    <p:inputNumber id="amount" value="#{paymentController.payment.amount}" 
+                                  required="true" requiredMessage="Введите сумму покупки"
+                                  decimalPlaces="2" style="width: 100%" />
+                    <p:message for="amount" />
+                </div>
+                
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить" action="#{paymentController.save}" 
+                                    icon="pi pi-check" styleClass="ui-button-success" />
+                    <p:button value="Отмена" outcome="payment" icon="pi pi-times" styleClass="ui-button-secondary" />
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html>
+

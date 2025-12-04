@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="title">Редактирование клиента - Система учета продаж сервисов</ui:define>
+    
+    <ui:define name="pageTitle">#{clientController.editId != null ? 'Редактирование клиента' : 'Создание нового клиента'}</ui:define>
+    
+    <ui:define name="content">
+        <h:form id="editForm" styleClass="edit-form">
+            <p:panel>
+                <div class="p-field">
+                    <p:outputLabel for="firstName" value="Имя:" />
+                    <p:inputText id="firstName" value="#{clientController.client.firstName}" 
+                                required="true" requiredMessage="Введите имя"
+                                style="width: 100%" />
+                    <p:message for="firstName" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="lastName" value="Фамилия:" />
+                    <p:inputText id="lastName" value="#{clientController.client.lastName}" 
+                                required="true" requiredMessage="Введите фамилию"
+                                style="width: 100%" />
+                    <p:message for="lastName" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="email" value="Email:" />
+                    <p:inputText id="email" value="#{clientController.client.email}" 
+                                required="true" requiredMessage="Введите email"
+                                style="width: 100%" />
+                    <p:message for="email" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="phone" value="Телефон:" />
+                    <p:inputText id="phone" value="#{clientController.client.phone}" 
+                                style="width: 100%" />
+                    <p:message for="phone" />
+                </div>
+                
+                <div class="p-field">
+                    <p:outputLabel for="status" value="Статус:" />
+                    <p:inputText id="status" value="#{clientController.client.status}" 
+                                style="width: 100%" />
+                    <p:message for="status" />
+                </div>
+                
+                <div class="form-buttons">
+                    <p:commandButton value="Сохранить" action="#{clientController.save}" 
+                                    icon="pi pi-check" styleClass="ui-button-success" />
+                    <p:button value="Отмена" outcome="client" icon="pi pi-times" styleClass="ui-button-secondary" />
+                </div>
+            </p:panel>
+        </h:form>
+    </ui:define>
+</ui:composition>
+
+</html>
+

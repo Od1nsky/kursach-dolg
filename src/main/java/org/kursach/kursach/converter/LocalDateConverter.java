@@ -1,0 +1,44 @@
+package org.kursach.kursach.converter;
+
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.convert.Converter;
+import jakarta.faces.convert.FacesConverter;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
+@FacesConverter(value = "localDateConverter")
+public class LocalDateConverter implements Converter<LocalDate> {
+    
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    
+    @Override
+    public LocalDate getAsObject(FacesContext context, UIComponent component, String value) {
+        if (value == null || value.trim().isEmpty()) {
+            return null;
+        }
+        
+        try {
+            return LocalDate.parse(value, FORMATTER);
+        } catch (DateTimeParseException e) {
+            // Пробуем стандартный формат ISO
+            try {
+                return LocalDate.parse(value);
+            } catch (DateTimeParseException ex) {
+                throw new IllegalArgumentException("Неверный формат даты: " + value, ex);
+            }
+        }
+    }
+
+    @Override
+    public String getAsString(FacesContext context, UIComponent component, LocalDate value) {
+        if (value == null) {
+            return "";
+        }
+        
+        return value.format(FORMATTER);
+    }
+}
+
