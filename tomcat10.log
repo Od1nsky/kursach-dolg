@@ -317,3 +317,6 @@ Hibernate:
 04-Dec-2025 07:23:07.329 INFO [http-nio-8081-exec-2] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/components.js.xhtml
 04-Dec-2025 07:23:07.331 INFO [http-nio-8081-exec-4] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/touch/touchswipe.js.xhtml
 04-Dec-2025 07:23:07.424 INFO [http-nio-8081-exec-1] org.kursach.kursach.security.AuthenticationFilter.doFilter Обработка запроса: /kursach/jakarta.faces.resource/primeicons/primeicons.woff2.xhtml
+04-Dec-2025 09:38:45.045 INFO [Catalina-utility-1] org.kursach.kursach.security.SessionListener.sessionDestroyed Сессия уничтожена: 276A019696ECE636F7D4EA4666E40875
+04-Dec-2025 09:38:45.067 INFO [Catalina-utility-1] org.kursach.kursach.security.SessionListener.sessionDestroyed Сессия уничтожена: F4E5EEF02C240BD8E15BD46CC853934D
+04-Dec-2025 09:38:45.068 INFO [Catalina-utility-1] org.kursach.kursach.security.SessionListener.sessionDestroyed Пользователь admin вышел из системы (сессия закрыта)

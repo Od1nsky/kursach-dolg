@@ -37,3 +37,4 @@ echo "База данных: localhost:5432/kursach"
 echo "Пользователь: project_role"
 echo ""
 
+

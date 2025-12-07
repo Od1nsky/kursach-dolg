@@ -23,3 +23,4 @@ public interface PaymentRepository extends Repository<Payment, Long> {
     List<Payment> findByServiceId(Long serviceId);
 }
 
+
