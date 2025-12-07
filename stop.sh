@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT_NAME="kursach_main"
+PROJECT_NAME="kursach_stas"
 TOMCAT_DIR="apache-tomcat-10"
 PID_FILE="tomcat10.pid"
 

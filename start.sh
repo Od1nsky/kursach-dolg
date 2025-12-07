@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PROJECT_NAME="kursach_main"
-DB_NAME="kursach_main"
+PROJECT_NAME="kursach_stas"
+DB_NAME="kursach_stas"
 TOMCAT_DIR="apache-tomcat-10"
 WAR_FILE="target/kursach.war"
 PID_FILE="tomcat10.pid"
