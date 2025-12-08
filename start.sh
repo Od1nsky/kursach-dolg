@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PROJECT_NAME="kursach_main"
-DB_NAME="kursach_main"
+PROJECT_NAME="kursach"
+DB_NAME="kursach"
 TOMCAT_DIR="apache-tomcat-10"
 WAR_FILE="target/kursach.war"
 PID_FILE="tomcat10.pid"
@@ -18,6 +18,33 @@ if ! pg_isready -h localhost -p 5432 > /dev/null 2>&1; then
     exit 1
 fi
 echo "PostgreSQL запущен ✓"
+
+# Проверка существования базы данных
+echo "Проверка базы данных $DB_NAME..."
+POSTGRES_USER="${POSTGRES_USER:-postgres}"
+POSTGRES_PASSWORD="${POSTGRES_PASSWORD:-}"
+export PGPASSWORD="$POSTGRES_PASSWORD"
+DB_EXISTS=$(psql -h localhost -p 5432 -U $POSTGRES_USER -lqt 2>/dev/null | cut -d \| -f 1 | grep -w $DB_NAME | wc -l)
+unset PGPASSWORD
+
+if [ "$DB_EXISTS" -eq 0 ]; then
+    echo "База данных $DB_NAME не найдена."
+    echo "Запуск setup-db.sh для создания базы данных..."
+    if [ -f "setup-db.sh" ]; then
+        chmod +x setup-db.sh
+        ./setup-db.sh
+        if [ $? -ne 0 ]; then
+            echo "ОШИБКА: Не удалось настроить базу данных!"
+            exit 1
+        fi
+    else
+        echo "ОШИБКА: Файл setup-db.sh не найден!"
+        echo "Пожалуйста, запустите setup-db.sh вручную для создания базы данных."
+        exit 1
+    fi
+else
+    echo "База данных $DB_NAME существует ✓"
+fi
 
 # Проверка, не запущен ли уже Tomcat
 if [ -f "$PID_FILE" ]; then
